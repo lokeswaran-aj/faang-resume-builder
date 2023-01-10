@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import "./../constants/vars.css";
+.container {
+    background: var(--color-primary);
+    color: var(--color-gray);
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    margin-left: 100px;
+}
+.logoText {
+    margin-left: 4px;
+    font-size: 45px;
+    font-weight: 600;
+    font-family: "Space Grotesk", sans-serif;
+}
+.login {
+    margin-right: 100px;
+}
+.loginButton {
+    border-radius: 26px;
+    background: var(--color-primary);
+    font-size: 15px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    border: 2px solid var(--color-secondary);
+}
+
+.loginButton:hover {
+    background-color: rgba(255, 105, 40, 1);
+    text-decoration: none;
+    color: var(--color-white);
+}
+.loginButton:active {
+    background-color: rgba(255, 105, 40, 0.9);
+    text-decoration: none;
+    color: var(--color-white);
+}
