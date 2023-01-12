@@ -1,5 +1,14 @@
 @import url(./../constants/vars.css);
 .container {
+    position: relative;
+}
+.nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: black;
+}
+.content {
     color: var(--color-black-ternary);
     padding: 0 100px 0 100px;
     display: flex;
@@ -8,6 +17,7 @@
     align-items: center;
     flex: 1;
     background: var(--color-primary);
+    height: 100vh;
 }
 .leftContent {
     padding: 10px;
