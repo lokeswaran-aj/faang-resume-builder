@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,700&family=Unna:wght@700&display=swap");
+@import "./constants/vars.css";
+.App {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Bar */
+.container {
+    background: var(--color-primary);
+    color: var(--color-gray);
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    margin-left: 100px;
+}
+.logoText {
+    color: black;
+    letter-spacing: 3px;
+    margin-left: 4px;
+    font-size: 45px;
+    font-weight: 600;
+    font-family: "Unna", serif;
+}
+.login {
+    margin-right: 100px;
+}
+.loginButton {
+    border-radius: 26px;
+    background: var(--color-primary);
+    font-size: 15px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    border: 2px solid var(--color-secondary);
+}
+
+.loginButton:hover {
+    background-color: rgba(255, 105, 40, 1);
+    text-decoration: none;
+    color: var(--color-white);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.loginButton:active {
+    background-color: rgba(255, 105, 40, 1);
+    text-decoration: none;
+    color: var(--color-white);
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+
+/* Landing Page Component */
+.landing {
+    position: relative;
+}
+.nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.content {
+    color: var(--color-black-ternary);
+    padding: 0 100px 0 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    background: var(--color-primary);
+    height: 100vh;
+}
+.leftContent {
+    padding: 10px;
+}
+.mainText {
+    margin: 10px 0 0 0;
+    line-height: 60px;
+    font-size: 50px;
+    font-weight: 500;
+}
+.subText {
+    margin: 10px 0 0 0;
+    font-size: 24px;
+    font-weight: 400;
+}
+.create {
+    margin-top: 20px;
+}
+.createButton {
+    font-family: "Space Grotesk";
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--color-secondary);
+    border: 0;
+    padding: 10px 20px 10px 20px;
+    border-radius: 24px;
+    color: var(--color-white);
+    box-shadow: rgba(255, 105, 40, 0.17) 0px -23px 25px 0px inset,
+        rgba(255, 105, 40, 0.15) 0px -36px 30px 0px inset,
+        rgba(255, 105, 40, 0.1) 0px -79px 40px 0px inset,
+        rgba(255, 105, 40, 0.06) 0px 2px 1px,
+        rgba(255, 105, 40, 0.2) 0px 4px 2px, rgba(255, 105, 40, 0.2) 0px 8px 4px;
+}
+.createButton:hover {
+    background-color: rgba(255, 105, 40, 1);
+    text-decoration: none;
+    color: var(--color-white);
+    box-shadow: rgba(255, 105, 40, 0.17) 0px -23px 25px 0px inset,
+        rgba(255, 105, 40, 0.15) 0px -36px 30px 0px inset,
+        rgba(255, 105, 40, 0.1) 0px -79px 40px 0px inset,
+        rgba(255, 105, 40, 0.06) 0px 2px 1px,
+        rgba(255, 105, 40, 0.2) 0px 4px 2px, rgba(255, 105, 40, 0.1) 0px 8px 4px,
+        rgba(255, 105, 40, 0.09) 0px 16px 8px;
+}
+.createButton:active {
+    background-color: rgba(255, 105, 40, 1);
+    text-decoration: none;
+    color: var(--color-white);
+    box-shadow: rgba(255, 105, 40, 0.17) 0px -23px 25px 0px inset,
+        rgba(255, 105, 40, 0.15) 0px -36px 30px 0px inset,
+        rgba(255, 105, 40, 0.1) 0px -79px 40px 0px inset,
+        rgba(255, 105, 40, 0.2) 0px 2px 1px, rgba(255, 105, 40, 0.2) 0px 4px 2px;
+}
+.createArrow {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 5px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(calc(-500px * 6));
+    }
+}
+.slider {
+    background: var(--color-primary);
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+}
+
+.slideTrack {
+    animation: scroll 10s linear infinite;
+    display: flex;
+    height: calc(456px * 12);
+    flex-direction: column;
+}
+
+.slider .slide {
+    margin: 20px 20px;
+    width: 400px;
+}
+.slider .slide img {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+        rgba(255, 105, 40, 0.3) 0px 8px 16px -8px;
+}

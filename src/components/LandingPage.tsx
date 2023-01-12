@@ -1,11 +1,11 @@
-import styles from "../styles/LandingPage.module.css";
+import styles from "./../App.module.css";
 import { FaArrowRight } from "react-icons/fa";
 import Navbar from "./Navbar";
 type Props = {};
 
 const LandingPage = (props: Props) => {
     return (
-        <div className={styles.container}>
+        <div className={styles.landing}>
             <div className={styles.nav}>
                 <Navbar />
             </div>
@@ -32,12 +32,94 @@ const LandingPage = (props: Props) => {
                         </button>
                     </div>
                 </div>
-                <div className={styles.resume}>
-                    <img
-                        src={require("../images/amazon.png")}
-                        alt=""
-                        className={styles.resumeImage}
-                    />
+
+                <div className={styles.slider}>
+                    <div className={styles.slideTrack}>
+                        <div className={styles.slide}>
+                            <img
+                                src={require("../images/amazon.png")}
+                                width="400"
+                                alt=""
+                            />
+                        </div>
+                        <div className={styles.slide}>
+                            <img
+                                src={require("../images/google.png")}
+                                width="400"
+                                alt=""
+                            />
+                        </div>
+                        <div className={styles.slide}>
+                            <img
+                                src={require("../images/facebook.png")}
+                                width="400"
+                                alt=""
+                            />
+                        </div>
+                        <div className={styles.slide}>
+                            <img
+                                src={require("../images/slack.png")}
+                                width="400"
+                                alt=""
+                            />
+                        </div>
+                        <div className={styles.slide}>
+                            <img
+                                src={require("../images/netflix.png")}
+                                width="400"
+                                alt=""
+                            />
+                        </div>
+                        <div className={styles.slide}>
+                            <img
+                                src={require("../images/twitter.png")}
+                                width="400"
+                                alt=""
+                            />
+                        </div>
+                        <div className={styles.slide}>
+                            <img
+                                src={require("../images/amazon.png")}
+                                width="400"
+                                alt=""
+                            />
+                        </div>
+                        <div className={styles.slide}>
+                            <img
+                                src={require("../images/google.png")}
+                                width="400"
+                                alt=""
+                            />
+                        </div>
+                        <div className={styles.slide}>
+                            <img
+                                src={require("../images/facebook.png")}
+                                width="400"
+                                alt=""
+                            />
+                        </div>
+                        <div className={styles.slide}>
+                            <img
+                                src={require("../images/slack.png")}
+                                width="400"
+                                alt=""
+                            />
+                        </div>
+                        <div className={styles.slide}>
+                            <img
+                                src={require("../images/netflix.png")}
+                                width="400"
+                                alt=""
+                            />
+                        </div>
+                        <div className={styles.slide}>
+                            <img
+                                src={require("../images/twitter.png")}
+                                width="400"
+                                alt=""
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

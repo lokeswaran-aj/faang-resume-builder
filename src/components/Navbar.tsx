@@ -1,4 +1,4 @@
-import styles from "../styles/Navbar.module.css";
+import styles from "./../App.module.css";
 
 type Props = {};
 
@@ -7,7 +7,7 @@ const Navbar = (props: Props) => {
         <>
             <div className={styles.container}>
                 <div className={styles.logo}>
-                    <p className={styles.logoText}>Refaang</p>
+                    <p className={styles.logoText}>REFAANG</p>
                 </div>
                 <div className={styles.login}>
                     <button className={styles.loginButton}>Login</button>
