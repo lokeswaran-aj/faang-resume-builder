@@ -1,0 +1,22 @@
+.cardContainer {
+    border: 2px outset rgba(95, 100, 119, 0.2);
+    border-radius: 10px;
+    background-color: #fbf5f3;
+    margin: 10px;
+    margin-bottom: 100px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+        rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+.cardImage {
+    width: 400px;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+        rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+.cardHeader {
+    border-bottom: 2px inset rgba(95, 100, 119, 0.2);
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}

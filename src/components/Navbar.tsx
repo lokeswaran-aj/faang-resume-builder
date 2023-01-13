@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { auth } from "../firebase";
 import useModal from "../hooks/useModal";
-import styles from "./../App.module.css";
+import styles from "./../styles/Navbar.module.css";
 import Modal from "./Modal";
 import { User, onAuthStateChanged, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";

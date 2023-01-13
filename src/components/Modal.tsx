@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import styles from "./../App.module.css";
+import styles from "./../styles/Modal.module.css";
 import { signInWithGoogle } from "../firebase";
 
 interface ModalType {

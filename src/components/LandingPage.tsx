@@ -1,4 +1,4 @@
-import styles from "./../App.module.css";
+import styles from "./../styles/LandingPage.module.css";
 import { FaArrowRight } from "react-icons/fa";
 import { HiTemplate } from "react-icons/hi";
 import useModal from "../hooks/useModal";

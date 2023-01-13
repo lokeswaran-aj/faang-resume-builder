@@ -1,0 +1,22 @@
+/* Choose template */
+.ctContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ctContainerHeading {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.resumeRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.resumeRow div {
+    padding: 0px 0px;
+}
