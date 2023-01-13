@@ -27,6 +27,7 @@ const Navbar = (props: Props) => {
 
         return unsubcrible;
     }, [isOpen, toggle]);
+
     const handleLogout = async () => {
         try {
             await signOut(auth);
@@ -37,13 +38,13 @@ const Navbar = (props: Props) => {
         }
     };
     return (
-        <>
+        <div className={styles.nav}>
             <div className={styles.container}>
                 <div className={styles.logo}>
                     <p className={styles.logoText}>REFAANG</p>
                 </div>
                 <div className={styles.login}>
-                    {user !== null ? (
+                    {user !== null && user !== undefined ? (
                         <div className={styles.loggedInContainer}>
                             <div className={styles.username}>
                                 {user && <p>{user.displayName}</p>}
@@ -68,7 +69,7 @@ const Navbar = (props: Props) => {
                     )}
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

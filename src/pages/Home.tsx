@@ -2,6 +2,7 @@ import LandingPage from "../components/LandingPage";
 import { useCallback, useEffect } from "react";
 import trackPathForAnalytics from "./../trackPathForAnalytics";
 import { useLocation } from "react-router-dom";
+import Navbar from "../components/Navbar";
 type Props = {};
 
 const Home = (props: Props) => {
@@ -20,6 +21,7 @@ const Home = (props: Props) => {
     }, [analytics]);
     return (
         <>
+            <Navbar />
             <LandingPage />
         </>
     );

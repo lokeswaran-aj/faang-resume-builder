@@ -1,9 +1,10 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 
 type Props = {};
 
 const Templates = (props: Props) => {
-    return <div>Templates</div>;
+    return <Navbar />;
 };
 
 export default Templates;

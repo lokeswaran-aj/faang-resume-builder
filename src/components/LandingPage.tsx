@@ -1,17 +1,16 @@
 import styles from "./../App.module.css";
 import { FaArrowRight } from "react-icons/fa";
 import { HiTemplate } from "react-icons/hi";
-import Navbar from "./Navbar";
 import useModal from "../hooks/useModal";
 import Modal from "./Modal";
 import { useEffect, useState } from "react";
-import { onAuthStateChanged } from "firebase/auth";
+import { User, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase";
 import { Link } from "react-router-dom";
 type Props = {};
 
 const LandingPage = (props: Props) => {
-    const [username, setUsername] = useState("");
+    const [user, setUser] = useState<User | null>();
     const { isOpen, toggle } = useModal();
 
     useEffect(() => {
@@ -20,20 +19,17 @@ const LandingPage = (props: Props) => {
                 if (isOpen) {
                     toggle();
                 }
-                setUsername(user.displayName);
+                setUser(user);
             } else {
-                console.log("Signed Out");
+                setUser(null);
             }
         });
 
         return unsubcrible;
-    }, [isOpen, toggle, username]);
+    }, [isOpen, toggle]);
 
     return (
         <div className={styles.landing}>
-            <div className={styles.nav}>
-                <Navbar />
-            </div>
             <div className={styles.content}>
                 <div className={styles.leftContent}>
                     <h1 className={styles.mainText}>
@@ -49,7 +45,7 @@ const LandingPage = (props: Props) => {
                         Impresses Employers
                     </h4>
                     <div className={styles.create}>
-                        {auth.currentUser ? (
+                        {user !== null ? (
                             <>
                                 <Link
                                     to={"/templates"}
