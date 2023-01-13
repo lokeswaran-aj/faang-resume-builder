@@ -1,9 +1,12 @@
 import styles from "./../App.module.css";
 import { FaArrowRight } from "react-icons/fa";
 import Navbar from "./Navbar";
+import useModal from "../hooks/useModal";
+import Modal from "./Modal";
 type Props = {};
 
 const LandingPage = (props: Props) => {
+    const { isOpen, toggle } = useModal();
     return (
         <div className={styles.landing}>
             <div className={styles.nav}>
@@ -24,12 +27,19 @@ const LandingPage = (props: Props) => {
                         Impresses Employers
                     </h4>
                     <div className={styles.create}>
-                        <button className={styles.createButton}>
+                        <button
+                            onClick={toggle}
+                            className={styles.createButton}
+                        >
                             Create Now
                             <span className={styles.createArrow}>
                                 <FaArrowRight />
                             </span>
                         </button>
+
+                        <Modal isOpen={isOpen} toggle={toggle}>
+                            <div>Yaay!!! Our Modal is rendered Properly.</div>
+                        </Modal>
                     </div>
                 </div>
 
