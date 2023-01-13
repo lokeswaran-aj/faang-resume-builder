@@ -32,18 +32,31 @@ const LandingPage = (props: Props) => {
         <div className={styles.landing}>
             <div className={styles.content}>
                 <div className={styles.leftContent}>
-                    <h1 className={styles.mainText}>
-                        Transform Your Career
-                        <br />
-                        with a Custom-Built
-                        <br />
-                        Resume
-                    </h1>
-                    <h4 className={styles.subText}>
-                        Easily Create a Resume That
-                        <br />
-                        Impresses Employers
-                    </h4>
+                    {user ? (
+                        <>
+                            <h1 className={styles.mainText}>
+                                Hii {user.displayName}&#128515;
+                            </h1>
+                            <h4 className={styles.subText}>
+                                Lets choose a Template...
+                            </h4>
+                        </>
+                    ) : (
+                        <>
+                            <h1 className={styles.mainText}>
+                                Transform Your Career
+                                <br />
+                                with a Custom-Built
+                                <br />
+                                Resume
+                            </h1>
+                            <h4 className={styles.subText}>
+                                Easily Create a Resume That
+                                <br />
+                                Impresses Employers
+                            </h4>
+                        </>
+                    )}
                     <div className={styles.create}>
                         {user !== null ? (
                             <>
