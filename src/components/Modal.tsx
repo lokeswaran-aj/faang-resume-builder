@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import styles from "./../App.module.css";
+import { signInWithGoogle } from "../firebase";
 
 interface ModalType {
     children?: ReactNode;
@@ -16,7 +17,13 @@ export default function Modal(props: ModalType) {
                         onClick={(e) => e.stopPropagation()}
                         className={styles.modalBox}
                     >
-                        {props.children}
+                        <button
+                            type="button"
+                            className={styles.googleLoginButton}
+                            onClick={signInWithGoogle}
+                        >
+                            Sign in with Google
+                        </button>
                     </div>
                 </div>
             )}

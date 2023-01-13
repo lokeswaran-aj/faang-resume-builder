@@ -16,8 +16,6 @@ const Home = (props: Props) => {
     }, [pathname, search]);
 
     useEffect(() => {
-        console.log("here");
-
         analytics();
     }, [analytics]);
     return (

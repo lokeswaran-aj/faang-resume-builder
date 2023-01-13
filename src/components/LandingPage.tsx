@@ -1,12 +1,34 @@
 import styles from "./../App.module.css";
 import { FaArrowRight } from "react-icons/fa";
+import { HiTemplate } from "react-icons/hi";
 import Navbar from "./Navbar";
 import useModal from "../hooks/useModal";
 import Modal from "./Modal";
+import { useEffect, useState } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase";
+import { Link } from "react-router-dom";
 type Props = {};
 
 const LandingPage = (props: Props) => {
+    const [username, setUsername] = useState("");
     const { isOpen, toggle } = useModal();
+
+    useEffect(() => {
+        const unsubcrible = onAuthStateChanged(auth, (user) => {
+            if (user?.displayName) {
+                if (isOpen) {
+                    toggle();
+                }
+                setUsername(user.displayName);
+            } else {
+                console.log("Signed Out");
+            }
+        });
+
+        return unsubcrible;
+    }, [isOpen, toggle, username]);
+
     return (
         <div className={styles.landing}>
             <div className={styles.nav}>
@@ -27,19 +49,38 @@ const LandingPage = (props: Props) => {
                         Impresses Employers
                     </h4>
                     <div className={styles.create}>
-                        <button
-                            onClick={toggle}
-                            className={styles.createButton}
-                        >
-                            Create Now
-                            <span className={styles.createArrow}>
-                                <FaArrowRight />
-                            </span>
-                        </button>
+                        {auth.currentUser ? (
+                            <>
+                                <Link
+                                    to={"/templates"}
+                                    className={styles.ChooseTemplateLink}
+                                >
+                                    <button
+                                        onClick={toggle}
+                                        className={styles.createButton}
+                                    >
+                                        Choose a template
+                                        <span className={styles.createArrow}>
+                                            <HiTemplate />
+                                        </span>
+                                    </button>
+                                </Link>
+                            </>
+                        ) : (
+                            <>
+                                <button
+                                    onClick={toggle}
+                                    className={styles.createButton}
+                                >
+                                    Get Started
+                                    <span className={styles.createArrow}>
+                                        <FaArrowRight />
+                                    </span>
+                                </button>
 
-                        <Modal isOpen={isOpen} toggle={toggle}>
-                            <div>Yaay!!! Our Modal is rendered Properly.</div>
-                        </Modal>
+                                <Modal isOpen={isOpen} toggle={toggle} />
+                            </>
+                        )}
                     </div>
                 </div>
 
