@@ -12,21 +12,19 @@ const Card: React.FC<Props> = ({ image, header, toggle }) => {
     return (
         <div className={styles.cardContainer}>
             <h2 className={styles.cardHeader}>{header}</h2>
-            <div className={styles.cardBody}>
-                <div className={styles.overlay}>
-                    <img
-                        src={image}
-                        alt="Card Image"
-                        className={styles.cardImage}
-                    />
-                    <div className={styles.buttonContainer}>
-                        <button className={styles.button} onClick={toggle}>
-                            Preview
-                        </button>
-                        <Link to={`/create/${header}`}>
-                            <button className={styles.button}>Create</button>
-                        </Link>
-                    </div>
+            <div className={styles.overlay}>
+                <img
+                    src={image}
+                    alt="Card Image"
+                    className={styles.cardImage}
+                />
+                <div className={styles.buttonContainer}>
+                    <button className={styles.button} onClick={toggle}>
+                        Preview
+                    </button>
+                    <Link to={`/create/${header}`}>
+                        <button className={styles.button}>Create</button>
+                    </Link>
                 </div>
             </div>
         </div>
