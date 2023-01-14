@@ -4,11 +4,10 @@ import styles from "./../styles/Card.module.css";
 interface Props {
     image: string;
     header: string;
+    toggle: () => void;
 }
 
-const Card: React.FC<Props> = ({ image, header }) => {
-    console.log(image);
-
+const Card: React.FC<Props> = ({ image, header, toggle }) => {
     return (
         <div className={styles.cardContainer}>
             <h2 className={styles.cardHeader}>{header}</h2>
@@ -20,7 +19,10 @@ const Card: React.FC<Props> = ({ image, header }) => {
                         className={styles.cardImage}
                     />
                     <div className={styles.buttonContainer}>
-                        <button className={styles.button}>Preview</button>
+                        <button className={styles.button} onClick={toggle}>
+                            Preview
+                        </button>
+
                         <button className={styles.button}>Create</button>
                     </div>
                 </div>

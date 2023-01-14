@@ -2,9 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,700&family=Unna:wght@700&display=swap");
 @import "./../constants/vars.css";
 .modalOverlay {
-    display: absolute;
+    position: fixed;
     left: 0;
     top: 0;
+    bottom: 0 !important;
+    right: 0 !important;
+    overflow: hidden;
     z-index: 999;
     width: 100vw;
     height: 100vh;

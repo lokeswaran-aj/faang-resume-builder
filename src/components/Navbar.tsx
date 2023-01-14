@@ -5,6 +5,7 @@ import styles from "./../styles/Navbar.module.css";
 import Modal from "./Modal";
 import { User, onAuthStateChanged, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import Login from "./Login";
 
 type Props = {};
 
@@ -64,7 +65,9 @@ const Navbar = (props: Props) => {
                             >
                                 Login{" "}
                             </button>
-                            <Modal isOpen={isOpen} toggle={toggle} />
+                            <Modal isOpen={isOpen} toggle={toggle}>
+                                <Login toggle={toggle} />
+                            </Modal>
                         </>
                     )}
                 </div>

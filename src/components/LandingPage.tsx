@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { User, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase";
 import { Link } from "react-router-dom";
+import Login from "./Login";
 type Props = {};
 
 const LandingPage = (props: Props) => {
@@ -87,7 +88,9 @@ const LandingPage = (props: Props) => {
                                     </span>
                                 </button>
 
-                                <Modal isOpen={isOpen} toggle={toggle} />
+                                <Modal isOpen={isOpen} toggle={toggle}>
+                                    <Login toggle={toggle} />
+                                </Modal>
                             </>
                         )}
                     </div>
