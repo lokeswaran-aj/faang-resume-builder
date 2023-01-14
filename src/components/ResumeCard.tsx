@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
 import styles from "./../styles/Card.module.css";
+import { Link } from "react-router-dom";
 interface Props {
     image: string;
     header: string;
@@ -22,8 +23,9 @@ const Card: React.FC<Props> = ({ image, header, toggle }) => {
                         <button className={styles.button} onClick={toggle}>
                             Preview
                         </button>
-
-                        <button className={styles.button}>Create</button>
+                        <Link to={`/create/${header}`}>
+                            <button className={styles.button}>Create</button>
+                        </Link>
                     </div>
                 </div>
             </div>
