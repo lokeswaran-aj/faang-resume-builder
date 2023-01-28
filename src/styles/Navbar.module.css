@@ -71,3 +71,8 @@
     justify-content: center;
     margin-right: 20px;
 }
+
+.username a {
+    text-decoration: none;
+    color: var(--color-primary);
+}

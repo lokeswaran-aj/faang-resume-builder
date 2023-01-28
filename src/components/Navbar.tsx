@@ -50,7 +50,9 @@ const Navbar = (props: Props) => {
                     {user !== null && user !== undefined ? (
                         <div className={styles.loggedInContainer}>
                             <div className={styles.username}>
-                                {user && <p>{user.displayName}</p>}
+                                <Link to={"/profile"}>
+                                    {user && <p>{user.displayName}</p>}
+                                </Link>
                             </div>
                             <button
                                 onClick={handleLogout}
