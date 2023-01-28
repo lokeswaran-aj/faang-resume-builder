@@ -4,7 +4,7 @@ import useModal from "../hooks/useModal";
 import styles from "./../styles/Navbar.module.css";
 import Modal from "./Modal";
 import { User, onAuthStateChanged, signOut } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Login from "./Login";
 
 type Props = {};
@@ -42,7 +42,9 @@ const Navbar = (props: Props) => {
         <div className={styles.nav}>
             <div className={styles.container}>
                 <div className={styles.logo}>
-                    <p className={styles.logoText}>REFAANG</p>
+                    <Link to={"/"} className={styles.logoText}>
+                        REFAANG
+                    </Link>
                 </div>
                 <div className={styles.login}>
                     {user !== null && user !== undefined ? (
